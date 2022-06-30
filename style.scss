@@ -1,6 +1,12 @@
 @import "colors";
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
-
+$colores: (
+    fondoHeader: rgb(0, 0, 0),
+    fondoMain: #ecc4ab,
+);
+@mixin height($height) {
+    height: $height;
+   }
 html, body {
     height: 100%;
     width: 100%;
@@ -14,18 +20,41 @@ body {
 }
 
 header {
-    height: 300px;
-    background-color: black;
+    @include height(135px);
+    background-color: map-get($colores, fondoHeader);
     nav{
         height: 100%;
         width: 100%;
-        
+        }
     }
-    }
+section{
+    @include height(auto);
+    background-color: map-get($colores, fondoMain);
+    div{
+        margin: 2.5%
+    } 
+
+}
 main {
-        background-color: $rosadito;
+        @include height(auto);
+        background-color: map-get($colores, fondoMain); 
         div{
-            padding-top: 1%;
-        }   
+            .margintop{
+                margin-top: 30px;
+                .imgheight{
+                    height: 200px;
+                    width: 100%;
+                }
+            }
+        } 
     }
 
+.dropdown-item--text{
+    font-weight: bolder;
+    padding-left: 10%;   
+    text-decoration: none;
+}
+#displayflex{
+    display: flex;
+}
+/*agregando extend a clase de bootstrap*/
