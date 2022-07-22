@@ -1,0 +1,65 @@
+@import "colors";
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
+
+$colores: (
+    fondoHeader: rgb(0, 0, 0),
+    fondoMain: #ecc4ab,
+);
+@mixin height($height) {
+    height: $height;
+   }
+html, body {
+    height: 100%;
+    width: 100%;
+    padding: 0%;
+    margin: 0%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    @include height(135px);
+    background-color: map-get($colores, fondoHeader);
+    nav{
+        height: 100%;
+        width: 100%;
+        }
+    }
+section{
+    @include height(auto);
+    background-color: map-get($colores, fondoMain);
+    border: 2px solid black;
+    div{
+        margin: 2.5%
+    } 
+
+}
+main {
+        @include height(auto);
+        background-color: map-get($colores, fondoMain); 
+        div{
+            padding-top: 10px;
+            padding-left: 10px;
+            padding-right: 10px;
+            padding-bottom: 10px;
+        }
+        #contactform{
+            height: 500px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+} 
+
+footer {
+    height: auto;
+    background-color: rgb(0, 0, 0);
+    color: $rosadito;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding-top: 2%;
+  }
